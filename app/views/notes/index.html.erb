@@ -1,0 +1,32 @@
+
+<h1>Notes</h1>
+
+<table class="table-auto">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th class="px-4 py-2">Body</th>
+      <th class="px-4 py-2">Active</th>
+      <th class="px-4 py-2">User</th>
+      <th class="px-4 py-2" colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @notes.each do |note| %>
+      <tr>
+        <td class="px-4 py-2 border"><%= note.title %></td>
+        <td class="px-4 py-2 border"><%= note.body %></td>
+        <td class="px-4 py-2 border"><%= note.active %></td>
+        <td class="px-4 py-2 border"><%= note.user_id %></td>
+        <td class="px-4 py-2 border"><%= link_to 'Show', note %></td>
+        <td class="px-4 py-2 border"><%= link_to 'Edit', edit_note_path(note) %></td>
+        <td class="px-4 py-2 border"><%= link_to 'Destroy', note, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Note', new_note_path %>
