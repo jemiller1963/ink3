@@ -5,7 +5,8 @@ class NotesController < ApplicationController
   # GET /notes
   # GET /notes.json
   def index
-    @notes = Note.all.order('created_at DESC')
+    #@notes = Note.all.order('created_at DESC')
+    @notes = Note.that_are_active
     @note = Note.new
   end
 

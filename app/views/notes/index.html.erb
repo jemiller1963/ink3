@@ -1,19 +1,23 @@
-<div class="container mx-auto">
-  <div class="max-w-lg p-10 ">
+<div class="container flex flex-row items-center justify-center mx-auto bg-gray-100">
+  <div class="bg-green-100">
+  </div>
+  <div class="max-w-lg p-10">
     <%= render 'form', note: @note %>
-
-      
-        <% @notes.each do |note| %>
-      <div class="max-w-md p-5 overflow-hidden rounded shadow-lg">
-            <p><%= note.title %></p>
+    <% @notes.each do |note| %>
+      <div class="px-8 pt-6 pb-8 mb-4 bg-white rounded shadow-md">
+        <strong><%= note.user.fname %></strong>
+        <p class="mb-5 text-xs"><%= full_date(note.created_at) %></p>
+            <p><%=link_to note.title, note %></p>
             <p><%= note.body %></p>
             <p><%= note.active %></p>
             <p><%= note.user_id %></p>
-            <%= link_to 'Show', note %>
-            <%= link_to 'Edit', edit_note_path(note) %>
-            <%= link_to 'Destroy', note, method: :delete, data: { confirm: 'Are you sure?' } %>
+            <div class="">
+              <div class="inline-block"><%= link_to show_svg('pencil.svg'), edit_note_path(note) %></div>
+              <div class="inline-block"><%= link_to show_svg('trash.svg'), note, method: :delete, data: { confirm: 'Are you sure?' } %></div>
+            </div>
       </div>
-        <% end %>
-      
+  <% end %>
+  </div>
+  <div class="bg-yellow-200">
   </div>
 </div>
