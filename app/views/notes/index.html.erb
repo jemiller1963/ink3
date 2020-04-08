@@ -1,8 +1,10 @@
 <div class="container flex flex-row items-center justify-center mx-auto bg-gray-100">
-  <div class="bg-green-100">
+  <div class="w-1/4">
   </div>
-  <div class="max-w-lg p-10">
-    <%= render 'form', note: @note %>
+  <div class="w-1/2 p-10">
+    <% if user_signed_in? %>
+      <%= render 'form', note: @note %>
+    <% end %>
     <% @notes.each do |note| %>
       <div class="px-8 pt-6 pb-8 mb-4 bg-white rounded shadow-md">
         <strong><%= note.user.fname %></strong>
@@ -11,13 +13,15 @@
             <p><%= note.body %></p>
             <p><%= note.active %></p>
             <p><%= note.user_id %></p>
-            <div class="">
-              <div class="inline-block"><%= link_to show_svg('pencil.svg'), edit_note_path(note) %></div>
-              <div class="inline-block"><%= link_to show_svg('trash.svg'), note, method: :delete, data: { confirm: 'Are you sure?' } %></div>
+              <div class="">
+            <% if user_signed_in? %>
+                <div class="inline-block"><%= link_to show_svg('pencil.svg'), edit_note_path(note) %></div>
+                <div class="inline-block"><%= link_to show_svg('trash.svg'), note, method: :delete, data: { confirm: 'Are you sure?' } %></div>
+            <% end %>
             </div>
       </div>
   <% end %>
   </div>
-  <div class="bg-yellow-200">
+  <div class="w-1/4">
   </div>
 </div>
