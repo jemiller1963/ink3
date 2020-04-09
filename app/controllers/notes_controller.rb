@@ -10,6 +10,9 @@ class NotesController < ApplicationController
     @note = Note.new
   end
 
+  def mine 
+    @mine = Note.where(user_id:  current_user.id)
+  end
   # GET /notes/1
   # GET /notes/1.json
   def show

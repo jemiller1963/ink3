@@ -7,12 +7,7 @@ Rails.application.routes.draw do
     end
 
   devise_for :users, controllers: { registrations: 'users/registrations' }
-  #root to: 'home#index'
-
+  # root to: 'home#index'
+  get 'mine', to: 'notes#mine'
   root to: 'application#root'
-
-
-  #namespace :user do
-    #root to: 'notes#index'
-  #end
 end
