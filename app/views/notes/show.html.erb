@@ -1,27 +1,21 @@
-<p>
-  <strong>Title:</strong>
-  <%= @note.title %>
-</p>
+<div class="w-1/2 px-8 pt-6 pb-8 mx-auto mb-4 bg-white rounded shadow-md">
+  <div class="mb-3 text-lg">
+    Viewing Note: <strong><%= @note.title %></strong>
 
-<p>
-  <strong>Body:</strong>
-  <%= @note.body %>
-</p>
+  <p class="text-sm">
+    User:
+    <%= fullname(@note.user) %>
+  </p>
 
-<p>
-  <strong>Active:</strong>
-  <%= @note.active %>
-</p>
+  </div>
 
-<p>
-  <strong>User:</strong>
-  <%= @note.user.fname %>
+  <p class="mb-3">
+    <%= @note.body %>
+  </p>
+<p class="text-sm">
+  <% if current_user.id == @note.user_id %>
+    <%= link_to 'Edit', edit_note_path(@note) %> |
+  <% end %>
+  <%= link_to 'Back', notes_path %>
 </p>
-
-<p>
-  <strong>User:</strong>
-  <%= @note.user.username %>
-</p>
-
-<%= link_to 'Edit', edit_note_path(@note) %> |
-<%= link_to 'Back', notes_path %>
+</div>
