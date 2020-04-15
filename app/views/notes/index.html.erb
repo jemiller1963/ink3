@@ -12,6 +12,7 @@
       <div class="px-8 pt-6 pb-8 mb-4 bg-white rounded shadow-md">
         <strong><%= note.user.fname %></strong>
         <p class="mb-5 text-xs"><%= full_date(note.created_at) %></p>
+      <%= image_tag (note.image_url), id: "previewImage" if note.image_url%>
             <p><%=link_to note.title, note %></p>
             <p><%= note.body %></p>
               <div class="">

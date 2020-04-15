@@ -6,5 +6,29 @@
 @import "components/forms";
 @import "components/dropzone";
 @import "components/image_uploader";
+@import "components/bulma";
+
+/* ... */
+.upload-preview img {
+  display: block;
+  max-width: 100%;
+}
+
+.upload-preview {
+  margin-bottom: 10px;
+  display: inline-block;
+  height: 300px;
+}
+
+img[src=""] {
+  visibility: hidden;
+}
+
+//// Add Fontawesome
+//$fa-font-path: '@fortawesome/fontawesome-free/webfonts';
+//@import '@fortawesome/fontawesome-free/scss/fontawesome';
+//@import '@fortawesome/fontawesome-free/scss/regular';
+//@import '@fortawesome/fontawesome-free/scss/solid';
+//@import '@fortawesome/fontawesome-free/scss/brands';
 
 @import "tailwindcss/utilities";

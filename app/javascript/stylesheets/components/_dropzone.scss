@@ -7,7 +7,6 @@
 //$link: $primary;
 //$link-hover: darken($primary, 20%);
 
-
 #drop_zone {
   position: relative;
   padding: 3rem 0;
@@ -24,7 +23,7 @@
     justify-content: center;
     align-items: center;
     font-size: 1.5em;
-    @apply bg-pink-500;
+    @apply bg-pink-500 opacity-25;
     pointer-events: none;
     z-index: 99;
   }
@@ -37,7 +36,7 @@
     justify-content: center;
     align-items: center;
     font-size: 1.5em;
-    @apply bg-green-400;
+    @apply bg-green-400 opacity-25;
     pointer-events: none;
     z-index: 99;
   }
