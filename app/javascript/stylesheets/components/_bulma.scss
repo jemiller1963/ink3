@@ -1,0 +1,62 @@
+.file-input {
+  height: 10%;
+  left: -100px;
+  opacity: 0;
+  outline: none;
+  position: absolute;
+  top: 0;
+  width: 10%;
+}
+
+.file-label {
+  align-items: stretch;
+  display: flex;
+  cursor: pointer;
+  justify-content: flex-start;
+  overflow: hidden;
+  position: relative;
+}
+
+.file-label:hover .file-cta {
+  background-color: #eeeeee;
+  color: #363636;
+}
+
+.file-label:hover .file-name {
+  border-color: #d5d5d5;
+}
+
+.file-label:active .file-cta {
+  background-color: #e8e8e8;
+  color: #363636;
+}
+
+.file-label:active .file-name {
+  border-color: #cfcfcf;
+}
+.file-label {
+  align-items: stretch;
+  display: flex;
+  cursor: pointer;
+  justify-content: flex-start;
+  overflow: hidden;
+  position: relative;
+}
+
+.file-label:hover .file-cta {
+  background-color: #eeeeee;
+  color: #363636;
+}
+
+.file-label:hover .file-name {
+  border-color: #d5d5d5;
+}
+
+.file-label:active .file-cta {
+  background-color: #e8e8e8;
+  color: #363636;
+}
+
+.file-label:active .file-name {
+  border-color: #cfcfcf;
+}

@@ -1,16 +1,16 @@
 class NotesController < ApplicationController
   before_action :set_note, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, except: [:index, :show]
+  before_action :authenticate_user!, except: [:index, :show, :edit, :update, :destroy]
 
   # GET /notes
   # GET /notes.json
   def index
-    #@notes = Note.all.order('created_at DESC')
-    @notes = Note.that_are_active
+    @notes = Note.all.order('created_at DESC')
+    #@notes = Note.that_are_active
     @note = Note.new
   end
 
-  def mine 
+  def mine
     @mine = Note.where(user_id:  current_user.id)
   end
   # GET /notes/1
@@ -75,6 +75,6 @@ class NotesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def note_params
-      params.require(:note).permit(:title, :body, :active, :user_id)
+      params.require(:note).permit(:title, :body, :active, :user_id, :image)
     end
 end

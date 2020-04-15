@@ -10,4 +10,5 @@ Rails.application.routes.draw do
   # root to: 'home#index'
   get 'mine', to: 'notes#mine'
   root to: 'application#root'
+  mount Shrine.presign_endpoint(:cache) => '/images/upload'
 end
