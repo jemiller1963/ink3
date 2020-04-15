@@ -9,7 +9,6 @@ require("@rails/activestorage").start()
 require("channels")
 require('stylesheets/application.scss')
 require('jquery')
-require("@fortawesome/fontawesome-free");
 require("packs/notes")
 window.Jquery = $;
 window.$ = $;

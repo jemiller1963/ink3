@@ -1,6 +1,3 @@
-require 'shrine'
-require 'shrine/storage/file_system'
-require 'shrine/storage/memory'
 require 'shrine/storage/s3'
 
 s3_options = {
