@@ -1,10 +1,10 @@
 require 'shrine/storage/s3'
 
 s3_options = {
-  bucket:            Rails.application.credentials.aws[:bucket], # required
-  access_key_id:     Rails.application.credentials.aws[:access_key_id],
-  secret_access_key: Rails.application.credentials.aws[:secret_access_key],
-  region:            Rails.application.credentials.aws[:region]
+  bucket:            Rails.application.credentials.dig(:aws, :bucket), # required
+  access_key_id:     Rails.application.credentials.dig(:aws, :access_key_id),
+  secret_access_key: Rails.application.credentials.dig(:aws, :secret_access_key),
+  region:            Rails.application.credentials.dig(:aws, :bucket)
 }
 
 Shrine.storages = {
