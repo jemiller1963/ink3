@@ -1,7 +1,7 @@
 require 'shrine/storage/s3'
 
 s3_options = {
-  bucket:            Rails.application.credentials.dig(:aws, :bucket), # required
+  bucket:            'ink3',
   access_key_id:     Rails.application.credentials.dig(:aws, :access_key_id),
   secret_access_key: Rails.application.credentials.dig(:aws, :secret_access_key),
   region:            Rails.application.credentials.dig(:aws, :region)
