@@ -13,16 +13,19 @@
         </ul>
       </div>
     <% end %>
-      <%= image_tag (@note.image_url), id: "previewImage" if @note.image_url%>
 
-<div class="flex">
-    <output id="list" class="content-center"></output>
-</div>
-    <div class="mb-6" id="drop_zone">Drag your image here</div>
+    <div class="flex">
+      <div class="upload-preview">
+        <%= image_tag @note.image_url.to_s, height: "300" %>
+      </div>
+    </div>
 
 
     <%= form.file_field(:image, label: false, class: 'file-input', wrapper: false, label_html: { class: 'file-label' }) %>
 
+    <%= form.label :image %>
+    <%= form.hidden_field :image, value: @note.cached_image_data, class: "upload-data" %>
+    <%= form.file_field :image, class: "upload-file" %>
 
     <div class="mb-4">
       <div class="mb-6">

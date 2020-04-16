@@ -11,7 +11,7 @@ class NotesController < ApplicationController
   end
 
   def mine
-    @mine = Note.where(user_id:  current_user.id)
+    @mine = Note.where(user_id:  current_user.id).order('created_at DESC')
   end
   # GET /notes/1
   # GET /notes/1.json
