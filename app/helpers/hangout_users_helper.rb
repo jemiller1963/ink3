@@ -1,0 +1,2 @@
+module HangoutUsersHelper
+end

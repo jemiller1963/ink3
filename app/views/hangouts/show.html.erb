@@ -1,0 +1,15 @@
+<p>
+  <strong>Name:</strong>
+  <%= @hangout.name %>
+</p>
+<div data-behavior='messages' data-hangout-id='<%= @hangout.id %>'>
+  <% @messages.each do |message| %>
+    <%= render message %>
+  <% end %>
+</div>
+
+<%= form_for [@hangout, Message.new], 
+  authenticity_token: true, 
+  format: :js  do |f| %>
+  <%= f.text_area :body, rows: 1, class:'shadow appearance-none border rounded w-full py-2 px-3 -ml-1 mt-1 text-gray-700 leading-tight focus:outline-none focus:shadow-outline', autofocus: true %>
+<% end %>

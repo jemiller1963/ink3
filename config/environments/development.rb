@@ -7,7 +7,7 @@ Rails.application.configure do
   # since you don't have to restart the web server when you make code changes.
   # THIS IS SO THE SERVER DOES NOT NEED TO RELOAD AFER A CHANGE
   config.cache_classes = false
-  config.reload_classes_only_on_change = false
+  # config.reload_classes_only_on_change = false
   config.serve_static_assets = false
 
   # Do not eager load code on boot.
@@ -62,6 +62,10 @@ Rails.application.configure do
 
   # Use an evented file watcher to asynchronously detect changes in source code,
   # routes, locales, etc. This feature depends on the listen gem.
+  # config.action_cable.disable_request_forgery_protection = true
+
+  config.action_cable.allowed_request_origins = [%r{/http:\/\/*\.ngrok\.io/}, %r{/https:\/\/*\.ngrok\.io/}]
+
   config.hosts << '.ngrok.io'
 
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
