@@ -70,6 +70,7 @@ gem 'sidekiq', '~> 5.2', '>= 5.2.7'
 group :development, :test do
   gem 'better_errors'
   gem 'rspec-rails', '~> 3.8', '>= 3.8.2'
+  gem 'binding_of_caller'
   gem 'faker', '~> 1.9', '>= 1.9.4'
   gem 'factory_bot_rails', '~> 5.0', '>= 5.0.2'
   gem 'pry', '~> 0.12.2'

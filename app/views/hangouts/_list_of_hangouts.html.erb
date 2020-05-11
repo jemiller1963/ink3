@@ -1,0 +1,16 @@
+<div class="">
+  <% if user_signed_in? %>
+    <h2>Hangouts</h2>
+    <%= link_to '+', new_hangout_path %>
+    <ul>
+      <% Hangout.all.each do |hangout| %>
+        <li><%= link_to hangout.name, hangout %>
+        <% if current_user.hangouts.include?(hangout) %>
+          <%= link_to 'X', hangout_hangout_user_path(hangout), method: :delete %>
+        <% end %>
+        </li>
+        </li>
+      <% end %>
+    </ul>
+  <% end %>
+</div>

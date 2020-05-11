@@ -1,0 +1,16 @@
+<div data-controller="channel" data-channel-id="<%= @hangout.id %>">
+  <p>
+    <strong>Name:</strong>
+    <%= @hangout.name %>
+  </p>
+<div data-target="hangout.messages">
+    <%= render @hangout.messages %>
+</div>
+  <% if current_user.hangouts.include?(@hangout) %>
+    <%= form_with model: [@hangout, Message.new] do |form| %>
+      <%= form.text_field :body, class: 'shadow appearance-none border rounded w-full py-2 px-3 mt-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline', autofocus: true %>
+    <% end %>
+  <% else %>
+    <%= link_to "Join #{@hangout.name}", hangout_hangout_user_path(@hangout), method: :post %>test2
+  <% end %>
+</div>
