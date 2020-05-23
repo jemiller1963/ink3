@@ -1,0 +1,58 @@
+<div class="flex" data-controller="channel" data-channel-id=<%= @hangout.id %>>
+
+  <div id="nav_section" class="w-1/4 px-4 py-2 m-2 text-gray-700">
+
+    <div id="left_nav">
+      <div class="mb-2">
+        <h2>Hangouts&nbsp;<%= link_to "+", new_hangout_path %></h2> 
+      </div>
+      <% Hangout.all.each do |hangout| %>
+        <div>
+          <%= link_to hangout.name, hangout %>
+          <% if current_user.hangouts.include?(hangout) %>
+            <%= link_to 'X', hangout_hangout_user_path(hangout), method: :delete %>
+          <% end %>
+        </div>
+      <% end %>
+
+
+      <div class="mt-5">
+        <h3>Active Users</h3>
+
+        <% if @hangout.users.any? %>
+          <% @hangout.users.each do |user| %>
+            <%= user.username %>
+          <% end %>
+        <% else %>
+          No users yet
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+  <div id="content_section" class="flex-1 px-4 py-2 m-2 text-gray-700">
+    <%= render @hangout.messages %>
+    <div>
+      <% if current_user.hangouts.include?(@hangout) %>
+        <%= form_with model: [@hangout, Message.new] do |form| %>
+          <%= form.text_field :body, class: 'shadow appearance-none border rounded w-full py-2 px-3 mt-3 mb-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline' %>
+        <% end %>
+      <% else %>
+        <%= link_to "Join #{@hangout.name}", hangout_hangout_user_path(@hangout), method: :post  %>
+      <% end %>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+</div>

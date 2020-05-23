@@ -23,3 +23,5 @@ window.$ = $;
 $(document).on("turbolinks:load", function () {
   console.log("Yeeha,we are ready");
 });
+
+import "controllers"

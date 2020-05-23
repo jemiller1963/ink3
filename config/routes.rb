@@ -1,6 +1,10 @@
 require 'sidekiq/web'
 
 Rails.application.routes.draw do
+  resources :hangouts do
+    resource :hangout_user
+    resources :messages
+  end
   resources :notes
     authenticate :user, lambda { |u| u.admin? } do
       mount Sidekiq::Web => '/sidekiq'
