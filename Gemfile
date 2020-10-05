@@ -26,7 +26,7 @@ gem 'jbuilder', '~> 2.7'
 
 # Use Active Storage variant
 gem 'image_processing', '~> 1.2'
-gem 'shrine', '~> 3.2'
+gem 'shrine', '~> 3.3'
 gem "aws-sdk-s3", "~> 1.14"
 gem 'acts_as_votable', '~> 0.11.1'
 #gem 'carrierwave', '~> 2.1'
