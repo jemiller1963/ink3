@@ -10,7 +10,7 @@
     "jquery": "^3.4.1",
     "tailwindcss": "^1.2.0",
     "turbolinks": "^5.2.0",
-    "uppy": "^1.13.0"
+    "uppy": "^2.3.3"
   },
   "version": "0.1.0",
   "devDependencies": {
